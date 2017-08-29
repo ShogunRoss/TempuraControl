@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
 		 initProgressDialog();
 		 initDeviceListDialog();
 		 initWidget();
-		 
 	}
 	
 	private void overflowMenuInActionBar(){
@@ -76,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
 		            menuKeyField.setBoolean(config, false);
 		        }
 		    } catch (Exception ex) {
-		        // 무시한다. 3.x 이 예외가 발생한다.
-		    	// 또, 타블릿 전용으로 만들어진 3.x 버전의 디바이스는 보통 하드웨어 버튼이 존재하지 않는다. 
 		    }
 	}
 	
@@ -154,10 +151,7 @@ public class MainActivity extends AppCompatActivity {
 			mDeviceArrayAdapter.notifyDataSetChanged();
 		
 	}
-	
-	
-	
-	
+
 	
 	private void enableBluetooth() {
 		BluetoothSerialClient btSet =  mClient;
@@ -245,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
 		@Override
 		public void onError(Exception e) {
 			mLoadingDialog.cancel();
-			addText("Messgae : Connection error - " +  e.toString() + "\n");
+			addText("Message : Connection error - " +  e.toString() + "\n");
 			mMenu.getItem(0).setTitle(R.string.action_connect);
 		}
 		
@@ -253,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
 		public void onDisconnected() {
 			mMenu.getItem(0).setTitle(R.string.action_connect);
 			mLoadingDialog.cancel();
-			addText("Messgae : Disconnected.\n");
+			addText("Message : Disconnected.\n");
 		}
 		@Override
 		public void onData(byte[] buffer, int length) {
@@ -273,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
 		
 		@Override
 		public void onConnected() {
-			addText("Messgae : Connected. " + mClient.getConnectedDevice().getName() + "\n");
+			addText("Message : Connected. " + mClient.getConnectedDevice().getName() + "\n");
 			mLoadingDialog.cancel();
 			mMenu.getItem(0).setTitle(R.string.action_disconnect);
 		}
@@ -333,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
 	
 	private String readCode() {
 		 try {
-			InputStream is = getAssets().open("HC_06_Echo.txt");
+			InputStream is = getAssets().open("About.txt");
 			int length = is.available();
 			byte[] buffer = new byte[length];
 			is.read(buffer);
