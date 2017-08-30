@@ -15,14 +15,14 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".ControlActivity">
+        <activity android:name=".BluetoothSerialClient$BluetoothUpActivity"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                  android:configChanges="orientation|screenSize|keyboard"></activity>
 
-        </activity>
     </application>
 
 </manifest>
