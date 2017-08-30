@@ -1,5 +1,4 @@
 package com.shogun.tempuracontrol;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothDevice;
@@ -7,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -44,7 +44,7 @@ import java.util.Set;
  * www.dev.re.kr
  * @author ice3x2@gmail.com / Beom
  */
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
 	private LinkedList<BluetoothDevice> mBluetoothDevices = new LinkedList<BluetoothDevice>();
 	private ArrayAdapter<String> mDeviceArrayAdapter;
@@ -162,9 +162,6 @@ public class MainActivity extends Activity {
 		mDeviceArrayAdapter.notifyDataSetChanged();
 
 	}
-
-
-
 
 
 	private void enableBluetooth() {
